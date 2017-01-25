@@ -4,15 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB9F3F7B-23D2-46EA-8AD2-90B9666408C2}</ProjectGuid>
+    <ProjectGuid>{02FCC50D-1206-475D-93FA-2D32A3E763DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSHTML5.Extensions.Plotly</RootNamespace>
-    <AssemblyName>CSHTML5.Extensions.Plotly</AssemblyName>
+    <RootNamespace>CSHTML5.Extensions.Plotly.Examples</RootNamespace>
+    <AssemblyName>CSHTML5.Extensions.Plotly.Examples</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsCSharpXamlForHtml5>true</IsCSharpXamlForHtml5>
-    <CSharpXamlForHtml5OutputType>Library</CSharpXamlForHtml5OutputType>
+    <CSharpXamlForHtml5OutputType>Application</CSharpXamlForHtml5OutputType>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Simulator\CSharpXamlForHtml5.Simulator.exe</StartProgram>
+    <StartArguments>"CSHTML5.Extensions.Plotly.Examples.dll"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,24 +59,31 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Annotation.cs" />
-    <Compile Include="Model\Axis.cs" />
-    <Compile Include="Model\BarMode.cs" />
-    <Compile Include="ChartControl.cs" />
-    <Compile Include="Model\Data.cs" />
-    <Compile Include="Model\Domain.cs" />
-    <Compile Include="Model\Font.cs" />
-    <Compile Include="Model\Layout.cs" />
-    <Compile Include="Model\Legend.cs" />
-    <Compile Include="Model\Line.cs" />
-    <Compile Include="Model\Marker.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\Trace.cs" />
-    <Compile Include="Model\TraceMode.cs" />
-    <Compile Include="Model\TraceType.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JS\plotly-latest.min.js" />
+    <Content Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSHTML5.Extensions.Plotly\CSHTML5.Extensions.Plotly.csproj">
+      <Project>{cb9f3f7b-23d2-46ea-8ad2-90b9666408c2}</Project>
+      <Name>CSHTML5.Extensions.Plotly</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildProgramFiles32)\MSBuild\CSharpXamlForHtml5\InternalStuff\Targets\CSharpXamlForHtml5.Build.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
