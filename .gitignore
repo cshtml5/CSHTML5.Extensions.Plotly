@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CSHTML5.Extensions.Plotly/obj/Debug
+/CSHTML5.Extensions.Plotly/.vs/CSHTML5.Extensions.Plotly/v14
+/.vs/CSHTML5.Extensions.Plotly/v14
+/CSHTML5.Extensions.Plotly.v11.suo
